@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --color-royal-blue: #001C8E;
+  --color-royal-blue-light: #1A36A8;
+  --color-royal-blue-dark: #00125C;
+  --color-golden-yellow: #FFD700;
+  --color-golden-yellow-light: #FFE033;
+  --color-golden-yellow-dark: #CCA400;
+  
+  --color-bg-light: #FAFAFA;
+  --color-bg-dark: #0F172A;
+  --color-surface-light: #FFFFFF;
+  --color-surface-dark: #1E293B;
+  
+  --color-text-light: #1F2937;
+  --color-text-dark: #F3F4F6;
+  --color-text-muted-light: #6B7280;
+  --color-text-muted-dark: #9CA3AF;
+}
+
+@layer base {
+  :root {
+    --bg-color: var(--color-bg-light);
+    --surface-color: var(--color-surface-light);
+    --text-color: var(--color-text-light);
+    --text-muted: var(--color-text-muted-light);
+  }
+
+  .dark {
+    --bg-color: var(--color-bg-dark);
+    --surface-color: var(--color-surface-dark);
+    --text-color: var(--color-text-dark);
+    --text-muted: var(--color-text-muted-dark);
+  }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+/* Custom scrollbar for netflix-style sliders */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
