@@ -1,73 +1,22 @@
-# React + TypeScript + Vite
+# GNASS CCTU Chapter Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Files
+- `index.html` — all page content and structure
+- `style.css` — all styling, including dark mode and mobile layout
+- `script.js` — dark mode toggle, mobile menu, Sabbath countdown, event filter, prayer wall demo
+- `images/` — empty folder; add your real logo and photos here
 
-Currently, two official plugins are available:
+## Historical hero image
+The hero collage uses public-domain pioneer portraits hosted by [Wikimedia Commons](https://commons.wikimedia.org/): James and Ellen White, Joseph Bates, and John Nevins Andrews. CSS applies grayscale and sepia grading with a charcoal and golden-yellow overlay.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## To open it
+Just double-click `index.html` — no server or install needed.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Still needs real content or a backend
+These were part of the brief but need more than plain HTML/CSS/JS to work for real:
+- **Logo & photos**: drop `gnasscctulogo.png` and any real photos into `images/`, then update the `<img>`/background references in `index.html` and `style.css`.
+- **Background video**: swap the gradient in `.hero-media` (in `style.css`) for a real video once you have footage.
+- **Sabbath countdown**: the countdown uses Ghana Time (GMT/UTC+0) and a rough 6:00 PM Friday start.
+- **Online giving**: the Give buttons are placeholders. Taking real payments needs a provider (e.g. Paystack, Flutterwave, PayPal) and a secure backend — that's a separate project from this static site.
+- **Prayer wall & alumni portal**: currently front-end only demos. Saving requests or member accounts long-term needs a database and backend.
+- **Live events calendar**: the events section is a static, filterable list. A calendar that updates itself needs a backend or a service like the Google Calendar API.
